@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { UserButton, useUser } from "@clerk/nextjs";
+import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 
 export default function NavBar() {
     const { isSignedIn } = useUser();
@@ -16,6 +16,9 @@ export default function NavBar() {
         <li>
                 {isSignedIn && (
                     <UserButton />)}
+                    {!isSignedIn && (
+                        <SignInButton />
+                        )}
               </li>
         </ul>
       </div>
